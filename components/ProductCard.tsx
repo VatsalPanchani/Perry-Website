@@ -1,0 +1,56 @@
+import React from 'react';
+import { Product } from '../types';
+import { Box, Settings, ArrowUpRight } from 'lucide-react';
+
+interface ProductCardProps {
+  product: Product;
+}
+
+const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+  return (
+    <div className="group bg-white rounded overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full">
+      <div className="relative aspect-square overflow-hidden bg-gray-50">
+        <img
+          src={product.image}
+          alt={product.name}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        {product.isBestSeller && (
+          <div className="absolute top-1 left-1">
+            <div className="bg-brand text-white px-1.5 py-0.5 rounded-xs text-[7px] font-black uppercase tracking-[0.1em] shadow-lg">
+              BEST
+            </div>
+          </div>
+        )}
+      </div>
+
+      <div className="p-3 sm:p-4 space-y-2 sm:space-y-3 flex flex-col flex-grow">
+        <div className="space-y-0.5">
+          <span className="text-[7px] sm:text-[8px] font-black text-brand uppercase tracking-widest leading-none block">{product.category}</span>
+          <h3 className="text-xs sm:text-base font-serif font-black text-black leading-tight line-clamp-2">
+            {product.name}
+          </h3>
+        </div>
+
+        <div className="space-y-1 text-[8px] sm:text-[10px] font-bold">
+          <div className="flex items-center gap-1.5 text-gray-400">
+            <Box size={10} className="text-brand shrink-0" />
+            <span className="text-black truncate">{product.material}</span>
+          </div>
+        </div>
+
+        <div className="pt-2 mt-auto flex items-center justify-between border-t border-gray-50">
+          <div className="flex flex-col">
+            <span className="text-[7px] font-black text-gray-300 uppercase tracking-widest leading-none mb-0.5">Approx</span>
+            <span className="text-sm sm:text-base font-serif font-black text-black">{product.price}</span>
+          </div>
+          <button className="w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center bg-gray-100 text-black rounded transition-all group-hover:bg-brand group-hover:text-white">
+             <ArrowUpRight size={12} className="sm:size-14" />
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ProductCard;
