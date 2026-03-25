@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
   <script>
     tailwind.config = {
+      darkMode: 'class',
       theme: {
         extend: {
           colors: {
@@ -49,6 +50,9 @@
       background-image: radial-gradient(circle, #e5e7eb 1px, transparent 1px);
       background-size: 30px 30px;
     }
+    .dark .technical-grid {
+      background-image: radial-gradient(circle, #374151 1px, transparent 1px);
+    }
     .text-shadow-sm {
       text-shadow: 0 1px 2px rgba(0,0,0,0.05);
     }
@@ -66,7 +70,7 @@
 </script>
 <link rel="stylesheet" href="/index.css">
 </head>
-<body class="bg-white text-black font-sans">
+<body class="bg-white text-black dark:bg-black dark:text-white font-sans transition-colors duration-300">
   <div id="root"></div>
 <script type="module" src="/index.tsx"></script>
 </body>

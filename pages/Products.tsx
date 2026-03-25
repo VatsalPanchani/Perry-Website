@@ -20,7 +20,7 @@ const Products: React.FC = () => {
   const categories = ['All', ...Object.values(Category)];
 
   return (
-    <div className="bg-white min-h-screen pt-20 pb-16 sm:pb-20">
+    <div className="bg-white dark:bg-black min-h-screen pt-20 pb-16 sm:pb-20 transition-colors duration-300">
       {/* Tight Header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 sm:mb-12">
         <div className="bg-black py-8 sm:py-12 px-6 sm:px-8 rounded-2xl relative overflow-hidden flex flex-col items-center text-center">
@@ -65,7 +65,7 @@ const Products: React.FC = () => {
                 ${
                   activeCategory === cat
                     ? "bg-brand text-white"
-                    : "bg-white text-gray-500 border border-gray-200 hover:bg-gray-50"
+                    : "bg-white dark:bg-gray-900 text-gray-500 dark:text-gray-400 border border-gray-200 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800"
                 }
               `}
             >
@@ -76,8 +76,8 @@ const Products: React.FC = () => {
       </div>
 
       {/* Custom Parts — now visible on all screens */}
-      <div className="bg-light p-5 sm:p-6 rounded-xl border border-gray-100">
-        <h4 className="text-[10px] font-black text-black uppercase tracking-widest mb-2">
+      <div className="bg-light dark:bg-gray-900 p-5 sm:p-6 rounded-xl border border-gray-100 dark:border-gray-800 transition-colors duration-300">
+        <h4 className="text-[10px] font-black text-black dark:text-white uppercase tracking-widest mb-2">
           Custom Parts
         </h4>
         <p className="text-[10px] text-gray-400 font-bold leading-relaxed mb-4">
@@ -102,9 +102,9 @@ const Products: React.FC = () => {
           ))}
         </div>
       ) : (
-        <div className="flex flex-col items-center justify-center py-16 bg-gray-50 rounded-2xl border border-gray-100">
-          <PackageSearch size={40} className="text-gray-200 mb-2" />
-          <h3 className="text-lg font-serif font-black text-gray-300">
+        <div className="flex flex-col items-center justify-center py-16 bg-gray-50 dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 transition-colors duration-300">
+          <PackageSearch size={40} className="text-gray-200 dark:text-gray-700 mb-2 transition-colors duration-300" />
+          <h3 className="text-lg font-serif font-black text-gray-300 dark:text-gray-600 transition-colors duration-300">
             No results
           </h3>
         </div>

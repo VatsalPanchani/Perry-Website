@@ -24,7 +24,7 @@ const Home: React.FC = () => {
   return (
     <div className="overflow-hidden">
       {/* Hero Section - Mobile Centric Realignment */}
-      <section className="relative min-h-[70vh] sm:min-h-[85vh] flex items-center pt-16 bg-white overflow-hidden technical-grid">
+      <section className="relative min-h-[70vh] sm:min-h-[85vh] flex items-center pt-16 bg-white dark:bg-black overflow-hidden technical-grid transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="space-y-4 sm:space-y-6 text-center lg:text-left order-2 lg:order-1">
@@ -33,21 +33,21 @@ const Home: React.FC = () => {
                 <span>Industrial Excellence</span>
               </div>
               
-              <h1 className="text-4xl sm:text-5xl md:text-7xl font-serif font-black text-black leading-[1.1] tracking-tighter">
+              <h1 className="text-4xl sm:text-5xl md:text-7xl font-serif font-black text-black dark:text-white leading-[1.1] tracking-tighter transition-colors duration-300">
                 Engineering <br className="hidden sm:block"/>
                 <span className="text-brand">Excellence</span> <br className="hidden sm:block"/>
                 In Ceramics
               </h1>
               
               <p className="text-sm sm:text-base text-gray-500 max-w-md mx-auto lg:mx-0 leading-relaxed font-medium px-4 sm:px-0">
-                Precision manufacturer of <span className="text-black font-bold">Ceramic Guides</span> for textile & industrial machinery.
+                Precision manufacturer of <span className="text-black dark:text-white font-bold transition-colors duration-300">Ceramic Guides</span> for textile & industrial machinery.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 pt-4 px-6 sm:px-0">
                 <Link to="/products" className="bg-brand text-white px-6 py-4 rounded font-black uppercase tracking-[0.1em] text-[10px] flex items-center justify-center gap-2 hover:bg-red-900 transition-all shadow-lg active:scale-95">
                   View Products <ArrowRight size={14} />
                 </Link>
-                <a href="#contact" className="bg-white text-black border border-black/10 px-6 py-4 rounded font-black uppercase tracking-[0.1em] text-[10px] flex items-center justify-center hover:bg-gray-50 transition-all active:scale-95">
+                <a href="#contact" className="bg-white dark:bg-gray-900 text-black dark:text-white border border-black/10 dark:border-white/10 px-6 py-4 rounded font-black uppercase tracking-[0.1em] text-[10px] flex items-center justify-center hover:bg-gray-50 dark:hover:bg-gray-800 transition-all active:scale-95">
                   Get a Quote
                 </a>
               </div>
@@ -66,7 +66,7 @@ const Home: React.FC = () => {
                       className="w-32 h-32 sm:w-80 sm:h-80 object-cover rounded-2xl sm:rounded-3xl shadow-2xl border-2 sm:border-4 border-white transform rotate-3" 
                       alt="Ceramic Part" 
                     />
-                    <div className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 bg-white p-2 sm:p-4 rounded-lg sm:rounded-xl shadow-xl border border-gray-100">
+                    <div className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 bg-white dark:bg-gray-800 p-2 sm:p-4 rounded-lg sm:rounded-xl shadow-xl border border-gray-100 dark:border-gray-700">
                       <Settings className="text-brand animate-spin text-xs sm:text-base" style={{animationDuration: '10s'}} size={16} />
                     </div>
                   </div>
@@ -78,7 +78,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Highlights - High Density & Horizontal on Mobile */}
-      <section className="py-8 sm:py-16 bg-light border-y border-gray-100">
+      <section className="py-8 sm:py-16 bg-light dark:bg-gray-900 border-y border-gray-100 dark:border-gray-800 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6">
             {[
@@ -87,10 +87,10 @@ const Home: React.FC = () => {
               { icon: <Settings size={16} />, label: "Custom", sub: "Design Build" },
               { icon: <Clock size={16} />, label: "Scaling", sub: "Bulk Supply" }
             ].map((item, idx) => (
-              <div key={idx} className="bg-white p-3 sm:p-6 rounded-lg border border-gray-100 flex items-center gap-2 sm:gap-4 group">
+              <div key={idx} className="bg-white dark:bg-gray-900 p-3 sm:p-6 rounded-lg border border-gray-100 dark:border-gray-800 flex items-center gap-2 sm:gap-4 group transition-colors  hover:border-brand dark:hover:border-red-500 duration-300">
                 <div className="text-brand bg-brand/5 p-2 rounded group-hover:bg-brand group-hover:text-white transition-colors">{item.icon}</div>
                 <div>
-                  <h4 className="text-[8px] sm:text-[10px] font-black uppercase tracking-widest text-black">{item.label}</h4>
+                  <h4 className="text-[8px] sm:text-[10px] font-black uppercase tracking-widest text-black dark:text-white transition-colors duration-300">{item.label}</h4>
                   <p className="text-[8px] sm:text-[11px] font-medium text-gray-400 leading-none">{item.sub}</p>
                 </div>
               </div>
@@ -100,14 +100,14 @@ const Home: React.FC = () => {
       </section>
 
       {/* Featured Products - 2 Columns on Mobile */}
-      <section className="py-12 sm:py-20 bg-white">
+      <section className="py-12 sm:py-20 bg-white dark:bg-black transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-end justify-between mb-6 sm:mb-10">
             <div className="space-y-1">
               <p className="text-brand font-black uppercase tracking-[0.2em] text-[8px] sm:text-[10px]">Best Sellers</p>
-              <h2 className="text-xl sm:text-3xl font-serif font-black text-black">Top Components</h2>
+              <h2 className="text-xl sm:text-3xl font-serif font-black text-black dark:text-white transition-colors duration-300">Top Components</h2>
             </div>
-            <Link to="/products" className="text-[8px] sm:text-[10px] font-black uppercase tracking-widest text-black flex items-center gap-1 hover:text-brand transition-colors">
+            <Link to="/products" className="text-[8px] sm:text-[10px] font-black uppercase tracking-widest text-black dark:text-white flex items-center gap-1 hover:text-brand dark:hover:text-red-500 transition-colors">
               View All <ChevronRight size={12} />
             </Link>
           </div>
@@ -153,22 +153,22 @@ const Home: React.FC = () => {
 
       {/* Contact Section - Streamlined for Mobile */}
       {/* Technical Support / Contact */}
-      <section id="contact" className="py-12 sm:py-20 bg-white">
+      <section id="contact" className="py-12 sm:py-20 bg-white dark:bg-black transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-light rounded-[2rem] p-8 sm:p-16 border border-gray-100 flex flex-col lg:flex-row gap-12 items-center">
+          <div className="bg-light dark:bg-gray-900 rounded-[2rem] p-8 sm:p-16 border border-gray-100 dark:border-gray-800 flex flex-col lg:flex-row gap-12 items-center transition-colors duration-300">
             <div className="lg:w-1/2 space-y-6">
-              <h2 className="text-3xl sm:text-5xl font-serif font-black text-black">Let's Discuss <br/><span className="text-brand">Your Project</span></h2>
+              <h2 className="text-3xl sm:text-5xl font-serif font-black text-black dark:text-white transition-colors duration-300">Let's Discuss <br/><span className="text-brand dark:text-red-500">Your Project</span></h2>
               <p className="text-sm text-gray-500 font-medium leading-relaxed max-w-sm">Direct consultation for technical specifications, material selection, and custom blueprints.</p>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
-                 <a href={`tel:${CONTACT_DATA.phone}`} className="flex items-center gap-4 p-4 bg-white rounded-xl border border-gray-100 hover:border-brand transition-all shadow-sm">
+                 <a href={`tel:${CONTACT_DATA.phone}`} className="flex items-center gap-4 p-4 bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 hover:border-brand dark:hover:border-red-500 transition-all shadow-sm">
                     <div className="w-10 h-10 bg-brand/5 text-brand flex items-center justify-center rounded-lg"><Phone size={18} /></div>
                     <div>
                       <p className="text-[7px] font-black text-gray-400 uppercase tracking-widest">Call Technical</p>
                       <p className="text-sm font-bold">{CONTACT_DATA.phone}</p>
                     </div>
                  </a>
-                 <a href={`https://wa.me/${CONTACT_DATA.whatsapp}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-4 bg-white rounded-xl border border-gray-100 hover:border-green-500 transition-all shadow-sm">
+                 <a href={`https://wa.me/${CONTACT_DATA.whatsapp}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-4 bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 hover:border-green-500 dark:hover:border-green-400 transition-all shadow-sm">
                     <div className="w-10 h-10 bg-green-50 text-green-600 flex items-center justify-center rounded-lg"><MessageCircle size={18} /></div>
                     <div>
                       <p className="text-[7px] font-black text-gray-400 uppercase tracking-widest">WhatsApp</p>
@@ -179,25 +179,25 @@ const Home: React.FC = () => {
             </div>
 
             <div className="lg:w-1/2 w-full space-y-6">
-               <div className="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm space-y-4">
+               <div className="bg-white dark:bg-gray-900 p-6 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm space-y-4 transition-colors duration-300">
                  <div className="flex items-start gap-4">
                    <MapPin className="text-brand shrink-0" size={20} />
                    <div>
-                     <h4 className="text-[10px] font-black uppercase tracking-widest text-black mb-1">Factory Unit</h4>
+                     <h4 className="text-[10px] font-black uppercase tracking-widest text-black dark:text-white mb-1 transition-colors duration-300">Factory Unit</h4>
                      <p className="text-xs font-bold text-gray-400 leading-snug">{CONTACT_DATA.address}</p>
                    </div>
                  </div>
-                 <div className="h-[1px] bg-gray-100"></div>
+                 <div className="h-[1px] bg-gray-100 dark:bg-gray-800 transition-colors duration-300"></div>
                  <div className="flex justify-between items-center text-[9px] font-black uppercase tracking-widest text-gray-500">
-                    <span>GSTIN: <span className="text-black">{CONTACT_DATA.gstin}</span></span>
-                    <span>Admin: <span className="text-black">{OWNER_NAME}</span></span>
+                    <span>GSTIN: <span className="text-black dark:text-white transition-colors duration-300">{CONTACT_DATA.gstin}</span></span>
+                    <span>Admin: <span className="text-black dark:text-white transition-colors duration-300">{OWNER_NAME}</span></span>
                  </div>
                </div>
                <div className="flex gap-3">
-                  <a href={CONTACT_DATA.indiaMart} target="_blank" rel="noopener noreferrer" className="flex-1 bg-orange-600 text-white py-4 rounded-xl text-[9px] font-black uppercase tracking-widest flex items-center justify-center gap-2 hover:bg-orange-700 transition-all shadow-lg">
+                  <a href={CONTACT_DATA.indiaMart} target="_blank" rel="noopener noreferrer" className="flex-1 bg-brand text-white py-4 rounded-xl text-[9px] font-black uppercase tracking-widest flex items-center justify-center gap-2 hover:bg-red-900 transition-all shadow-lg">
                     IndiaMart Store <ExternalLink size={14} />
                   </a>
-                  <a href={CONTACT_DATA.facebook} target="_blank" rel="noopener noreferrer" className="w-14 h-14 bg-blue-600 text-white rounded-xl flex items-center justify-center hover:bg-blue-700 transition-all shadow-lg">
+                  <a href={CONTACT_DATA.facebook} target="_blank" rel="noopener noreferrer" className="w-14 h-14 bg-black text-white rounded-xl flex items-center justify-center hover:bg-grey-900 transition-all shadow-lg">
                     <Facebook size={20} />
                   </a>
                </div>
