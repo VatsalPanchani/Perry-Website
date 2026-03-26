@@ -1,17 +1,76 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Phone, Mail, MapPin, Upload, Building2, User, FileText, Send, MessageSquare, Globe } from 'lucide-react';
 import { CONTACT_DATA } from '../constants';
 
 const Contact: React.FC = () => {
-  const [fileName, setFileName] = useState<string | null>(null);
+    const [fileName, setFileName] = useState<string | null>(null);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const navigate = useNavigate();
 
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files.length > 0) {
-      setFileName(e.target.files[0].name);
-    } else {
-      setFileName(null);
-    }
+    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      if (e.target.files && e.target.files.length > 0) {
+        setFileName(e.target.files[0].name);
+      } else {
+        setFileName(null);
+      }
+    };
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+  setIsSubmitting(true);
+
+  const form = e.currentTarget;
+
+  const name = (form.elements.namedItem("name") as HTMLInputElement)?.value.trim();
+  const company = (form.elements.namedItem("company") as HTMLInputElement)?.value.trim();
+  const phone = (form.elements.namedItem("phone") as HTMLInputElement)?.value.trim();
+  const city = (form.elements.namedItem("city") as HTMLInputElement)?.value.trim();
+  const requirement = (form.elements.namedItem("requirement") as HTMLTextAreaElement)?.value.trim();
+
+  const file = (form.elements.namedItem("file") as HTMLInputElement)?.files?.[0];
+  const fileName = file ? file.name : "No file uploaded";
+
+  if (!name || !phone || !city || !requirement) {
+    alert("Please fill all required fields");
+    return;
+  }
+
+  const formData = {
+    name,
+    company,
+    phone,
+    city,
+    fileName,
+    requirement,
   };
+
+  try {
+    await fetch("https://script.google.com/macros/s/AKfycbzDBFxUiXZvizkNvuevco21AR2imq7AVCD_b9OojNUThDGjAm9PhDYmcPlF2gvd00eXtQ/exec", {
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        "Content-Type": "text/plain;charset=utf-8",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    // Generate unique ID
+    const uniqueId =
+      Math.random().toString(36).substring(2, 15) +
+      Math.random().toString(36).substring(2, 15);
+
+    sessionStorage.setItem(`thankyou_${uniqueId}`, Date.now().toString());
+
+    navigate(`/thank-you?id=${uniqueId}`);
+
+  } catch (error) {
+    console.error("Form submit error:", error);
+    alert("Something went wrong. Please try again.");
+  } finally {
+    setIsSubmitting(false);
+  }
+};
 
   return (
     <div className="bg-white dark:bg-black min-h-screen pt-20 pb-16 sm:pb-20 transition-colors duration-300">
@@ -35,7 +94,7 @@ const Contact: React.FC = () => {
           <div className="lg:col-span-2 bg-gray-50 dark:bg-gray-900 rounded-2xl p-6 sm:p-10 border border-gray-100 dark:border-gray-800 shadow-sm">
             <h2 className="text-2xl font-serif font-black text-black dark:text-white mb-8">Send an Enquiry</h2>
             
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {/* Name */}
                 <div className="space-y-2">
@@ -44,6 +103,7 @@ const Contact: React.FC = () => {
                   </label>
                   <input 
                     type="text" 
+                    name="name"
                     placeholder="Your Name"
                     className="w-full bg-white dark:bg-black border border-gray-200 dark:border-gray-800 rounded-xl px-4 py-3 text-sm text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all"
                     required
@@ -57,6 +117,7 @@ const Contact: React.FC = () => {
                   </label>
                   <input 
                     type="text" 
+                    name="company"
                     placeholder="Your Company Name"
                     className="w-full bg-white dark:bg-black border border-gray-200 dark:border-gray-800 rounded-xl px-4 py-3 text-sm text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all"
                   />
@@ -79,6 +140,7 @@ const Contact: React.FC = () => {
                     </select>
                     <input 
                       type="tel" 
+                      name="phone"
                       placeholder="9426636910"
                       className="w-full bg-white dark:bg-black border border-gray-200 dark:border-gray-800 rounded-r-xl px-4 py-3 text-sm text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all"
                       required
@@ -93,6 +155,7 @@ const Contact: React.FC = () => {
                   </label>
                   <input 
                     type="text" 
+                    name="city"
                     placeholder="Rajkot, Gujarat"
                     className="w-full bg-white dark:bg-black border border-gray-200 dark:border-gray-800 rounded-xl px-4 py-3 text-sm text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all"
                     required
@@ -108,6 +171,7 @@ const Contact: React.FC = () => {
                 <div className="relative border-2 border-dashed border-gray-200 dark:border-gray-800 rounded-xl p-6 hover:border-brand dark:hover:border-brand transition-colors bg-white dark:bg-black text-center group cursor-pointer">
                   <input 
                     type="file" 
+                    name="file"
                     accept=".pdf,.jpg,.jpeg,.png"
                     onChange={handleFileChange}
                     className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
@@ -134,6 +198,7 @@ const Contact: React.FC = () => {
                   <FileText size={14} /> Requirement Details
                 </label>
                 <textarea 
+                  name="requirement"
                   rows={4}
                   placeholder="Please describe your requirements, dimensions, material preferences, and expected quantity..."
                   className="w-full bg-white dark:bg-black border border-gray-200 dark:border-gray-800 rounded-xl px-4 py-3 text-sm text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent transition-all resize-none"
@@ -144,9 +209,10 @@ const Contact: React.FC = () => {
               {/* Submit Button */}
               <button 
                 type="submit"
-                className="w-full bg-[#890101] hover:bg-red-900 text-white font-black uppercase tracking-[0.1em] text-xs py-4 rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg hover:shadow-xl active:scale-[0.98]"
+                disabled={isSubmitting}
+                className={`w-full bg-[#890101] hover:bg-red-900 text-white font-black uppercase tracking-[0.1em] text-xs py-4 rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg hover:shadow-xl active:scale-[0.98] ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
               >
-                Submit Enquiry <Send size={16} />
+                {isSubmitting ? 'Submitting...' : 'Submit Enquiry'} {!isSubmitting && <Send size={16} />}
               </button>
             </form>
           </div>

@@ -7,6 +7,7 @@ import { ThemeProvider } from './components/theme-provider';
 import Home from './pages/Home';
 import Products from './pages/Products';
 import Contact from './pages/Contact';
+import ThankYou from './pages/ThankYou';
 
 // Scroll to top on route change
 const ScrollToTop = () => {
@@ -38,6 +39,7 @@ const App: React.FC = () => {
               <Route path="/" element={<Home />} />
               <Route path="/products" element={<Products />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/thank-you" element={<ThankYou />} />
             </Routes>
           </main>
           <Footer />
