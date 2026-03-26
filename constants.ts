@@ -7,7 +7,7 @@ export const CONTACT_DATA: ContactInfo = {
   gstin: "24AUBPP7598M1ZU",
   facebook: "https://facebook.com/perryceratech",
   indiaMart: "https://www.indiamart.com/perry-cera-tech",
-  email: "perryceratech@gmail.com"
+  email: "sanjaypanchani68@gmail.com"
 };
 
 export const OWNER_NAME = "Sanjay Panchani";
@@ -168,7 +168,7 @@ export const PRODUCTS: Product[] = [
     price: "₹4,200",
     description: "Precision-ground plungers for high-pressure fluid metering and pumping.",
     specs: ["Mirror Finish", "High Compressive Strength", "Chemical Inertness"],
-    image: "/images/products/14.jpg"
+    image: "/images/products/14_1.jpg"
   },
   {
     id: "15",
@@ -279,6 +279,30 @@ export const PRODUCTS: Product[] = [
     description: "Flat ceramic substrates for electronic circuits and heat dissipation.",
     specs: ["High Thermal Conductivity", "Excellent Flatness", "Good Electrical Insulation"],
     image: "/images/products/24.jpg",
+    isBestSeller: true
+  },
+  {
+    id: "25",
+    name: "Ceramic Substrate",
+    category: Category.HighAlumina,
+    material: "96% Alumina",
+    usage: "Electronics & Thick Film",
+    price: "₹250",
+    description: "Flat ceramic substrates for electronic circuits and heat dissipation.",
+    specs: ["High Thermal Conductivity", "Excellent Flatness", "Good Electrical Insulation"],
+    image: "/images/products/25.jpg",
+    isBestSeller: true
+  },
+  {
+    id: "26",
+    name: "Ceramic Substrate",
+    category: Category.HighAlumina,
+    material: "96% Alumina",
+    usage: "Electronics & Thick Film",
+    price: "₹250",
+    description: "Flat ceramic substrates for electronic circuits and heat dissipation.",
+    specs: ["High Thermal Conductivity", "Excellent Flatness", "Good Electrical Insulation"],
+    image: "/images/products/26.jpg",
     isBestSeller: true
   }
 ];

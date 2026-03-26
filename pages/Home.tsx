@@ -47,9 +47,9 @@ const Home: React.FC = () => {
                 <Link to="/products" className="bg-brand text-white px-6 py-4 rounded font-black uppercase tracking-[0.1em] text-[10px] flex items-center justify-center gap-2 hover:bg-red-900 transition-all shadow-lg active:scale-95">
                   View Products <ArrowRight size={14} />
                 </Link>
-                <a href="#contact" className="bg-white dark:bg-gray-900 text-black dark:text-white border border-black/10 dark:border-white/10 px-6 py-4 rounded font-black uppercase tracking-[0.1em] text-[10px] flex items-center justify-center hover:bg-gray-50 dark:hover:bg-gray-800 transition-all active:scale-95">
-                  Get a Quote
-                </a>
+                <Link to="/contact" className="bg-white dark:bg-gray-900 text-black dark:text-white border border-black/10 dark:border-white/10 px-6 py-4 rounded font-black uppercase tracking-[0.1em] text-[10px] flex items-center justify-center hover:bg-gray-50 dark:hover:bg-gray-800 transition-all active:scale-95">
+                  Share your Requirements
+                </Link>
               </div>
             </div>
 

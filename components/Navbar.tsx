@@ -10,6 +10,7 @@ const Navbar: React.FC = () => {
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'Products', path: '/products' },
+    { name: 'Contact', path: '/contact' },
   ];
 
   return (
@@ -72,12 +73,6 @@ const Navbar: React.FC = () => {
               </Link>
             ))}
             <ThemeToggle />
-            <Link
-              to="/#contact"
-              className="bg-brand text-white px-5 py-2 rounded text-[10px] font-black uppercase tracking-widest hover:bg-red-900 transition-all shadow active:scale-95"
-            >
-              Contact
-            </Link>
           </div>
 
           {/* Mobile Menu Button */}
