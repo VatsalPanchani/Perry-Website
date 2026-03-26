@@ -23,7 +23,7 @@ const Products: React.FC = () => {
     <div className="bg-white dark:bg-black min-h-screen pt-20 pb-16 sm:pb-20 transition-colors duration-300">
       {/* Tight Header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 sm:mb-12">
-        <div className="bg-black py-8 sm:py-12 px-6 sm:px-8 rounded-2xl relative overflow-hidden flex flex-col items-center text-center">
+        <div className="bg-[#700000] py-8 sm:py-12 px-6 sm:px-8 rounded-2xl relative overflow-hidden flex flex-col items-center text-center">
           <div className="absolute top-0 right-0 p-8 text-brand opacity-5">
              <Hexagon size={100} fill="currentColor" />
           </div>
@@ -33,7 +33,7 @@ const Products: React.FC = () => {
           </p>
           
           <div className="w-full max-w-lg relative">
-            <div className="absolute inset-y-0 left-0 pl-4 sm:pl-6 flex items-center pointer-events-none text-gray-500">
+            <div className="absolute inset-y-0 left-0 pl-4 sm:pl-6 flex items-center pointer-events-none text-gray-100">
               <Search size={16} />
             </div>
             <input
@@ -41,7 +41,7 @@ const Products: React.FC = () => {
               placeholder="Search components..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 sm:pl-14 pr-4 sm:pr-6 py-3 sm:py-4 rounded-xl bg-white/10 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-brand shadow-xl text-sm sm:text-base font-serif placeholder:text-gray-600"
+              className="w-full pl-10 sm:pl-14 pr-4 sm:pr-6 py-3 sm:py-4 rounded-xl bg-white/10 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-brand shadow-xl text-sm sm:text-base font-serif placeholder:text-gray-100"
             />
           </div>
         </div>
