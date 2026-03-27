@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import { Link } from 'react-router-dom';
 import { Search, Filter, SlidersHorizontal, PackageSearch, Hexagon, ChevronRight } from 'lucide-react';
 import { PRODUCTS } from '../constants';
 import { Category } from '../types';
@@ -83,12 +84,12 @@ const Products: React.FC = () => {
         <p className="text-[10px] text-gray-400 font-bold leading-relaxed mb-4">
           Don’t see your specific component? We build to blueprint.
         </p>
-        <a
-          href="/#contact"
+        <Link
+          to="/#contact"
           className="text-[9px] font-black uppercase tracking-widest text-brand hover:underline flex items-center gap-1"
         >
           Send Blueprint <ChevronRight size={10} />
-        </a>
+        </Link>
       </div>
 
     </div>

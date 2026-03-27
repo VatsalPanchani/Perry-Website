@@ -286,7 +286,7 @@ const Contact: React.FC = () => {
                   href={CONTACT_DATA.facebook} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="bg-[#1877F2] text-white px-4 py-3 rounded-xl flex items-center justify-between group hover:bg-[#166FE5] transition-all"
+                  className="bg-brand text-white px-4 py-3 rounded-xl flex items-center justify-between group hover:bg-red-900 transition-all"
                 >
                   <div className="flex items-center gap-3">
                     <span className="font-bold text-sm">Facebook Page</span>

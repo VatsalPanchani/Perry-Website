@@ -22,7 +22,7 @@ export const PRODUCTS: Product[] = [
     price: "₹850",
     description: "High-precision ceramic eyelets for smooth yarn passage with minimum friction.",
     specs: ["Surface Finish: Polished", "Hardness: >1500 HV", "Heat Resistant: Up to 1600°C"],
-    image: "/images/products/1.jpg",
+    image: "/images/products/1_1.jpg",
     isBestSeller: true
   },
   {
@@ -56,7 +56,7 @@ export const PRODUCTS: Product[] = [
     price: "₹450",
     description: "Excellent dielectric strength for high-temperature electrical insulation.",
     specs: ["Thermal Shock Proof", "Voltage: Up to 25KV", "Custom Sizes Available"],
-    image: "/images/products/4.jpg"
+    image: "/images/products/4_1.jpg"
   },
   {
     id: "5",
