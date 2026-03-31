@@ -229,7 +229,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <p className="text-[10px] font-black uppercase tracking-widest text-gray-500 mb-1">Phone</p>
-                    <a href={`tel:+91${CONTACT_DATA.phone}`} className="text-sm font-bold text-black dark:text-white hover:text-brand transition-colors block">+91 {CONTACT_DATA.phone}</a>
+                    <a href={`tel:+91${CONTACT_DATA.phone}`} className="text-sm font-bold text-black dark:text-white hover:text-brand transition-colors block">Mobile: +91 {CONTACT_DATA.phone}</a>
                     <a href={`https://wa.me/91${CONTACT_DATA.whatsapp}`} target="_blank" rel="noopener noreferrer" className="text-sm font-bold text-green-600 dark:text-green-500 hover:text-green-700 transition-colors block mt-1">WhatsApp: +91 {CONTACT_DATA.whatsapp}</a>
                   </div>
                 </div>
@@ -250,7 +250,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <p className="text-[10px] font-black uppercase tracking-widest text-gray-500 mb-1">Address</p>
-                    <p className="text-sm font-medium text-black dark:text-white leading-relaxed">{CONTACT_DATA.address}</p>
+                    <a href={`https://www.google.com/maps/place/Gokul+Estate/@22.1543454,70.7778682,19z/data=!3m1!4b1!4m6!3m5!1s0x395835bd3754a6cd:0xa633680a35fcdf11!8m2!3d22.1543442!4d70.7785119!16s%2Fg%2F11q9024xrx?authuser=0&entry=ttu&g_ep=EgoyMDI2MDMyNC4wIKXMDSoASAFQAw%3D%3D`} className="text-sm font-medium text-black dark:text-white leading-relaxed">{CONTACT_DATA.address}</a>
                   </div>
                 </div>
 

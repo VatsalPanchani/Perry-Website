@@ -72,15 +72,15 @@ const Footer: React.FC = () => {
             <ul className="space-y-5">
               <li className="flex items-start gap-4 text-sm text-gray-500 dark:text-gray-400 group">
                 <MapPin className="text-brand dark:text-red-500 w-5 h-5 mt-0.5 shrink-0" />
-                <span className="group-hover:text-black dark:group-hover:text-white transition-colors">{CONTACT_DATA.address}</span>
+                <a href={`https://www.google.com/maps/place/Gokul+Estate/@22.1543454,70.7778682,19z/data=!3m1!4b1!4m6!3m5!1s0x395835bd3754a6cd:0xa633680a35fcdf11!8m2!3d22.1543442!4d70.7785119!16s%2Fg%2F11q9024xrx?authuser=0&entry=ttu&g_ep=EgoyMDI2MDMyNC4wIKXMDSoASAFQAw%3D%3D`} className="group-hover:text-black dark:group-hover:text-white transition-colors">{CONTACT_DATA.address}</a>
               </li>
               <li className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400 group">
                 <Phone className="text-brand dark:text-red-500 w-5 h-5 shrink-0" />
-                <span className="group-hover:text-black dark:group-hover:text-white transition-colors">{CONTACT_DATA.phone} ({OWNER_NAME})</span>
+                <a href={`tel:+91${CONTACT_DATA.phone}`} className="group-hover:text-black dark:group-hover:text-white transition-colors">{CONTACT_DATA.phone} ({OWNER_NAME})</a>
               </li>
               <li className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400 group">
                 <Mail className="text-brand dark:text-red-500 w-5 h-5 shrink-0" />
-                <span className="group-hover:text-black dark:group-hover:text-white transition-colors">{CONTACT_DATA.email}</span>
+                <a href={`mailto:${CONTACT_DATA.email}`} className="group-hover:text-black dark:group-hover:text-white transition-colors">{CONTACT_DATA.email}</a>
               </li>
             </ul>
           </div>

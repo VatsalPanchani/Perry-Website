@@ -5,8 +5,8 @@ export const CONTACT_DATA: ContactInfo = {
   whatsapp: "8530245123",
   address: "Gokul Estate, Shed no. 6, Opp. Maruti Multipack, Opp. Madhav Industries, Shapar (Verawal), Dist: RAJKOT -360024",
   gstin: "24AUBPP7598M1ZU",
-  facebook: "https://facebook.com/perryceratech",
-  indiaMart: "https://www.indiamart.com/perry-cera-tech",
+  facebook: "https://www.facebook.com/share/1Qg8XX3zjx/",
+  indiaMart: "https://www.indiamart.com/earrings-teratech-industries/",
   email: "sanjaypanchani68@gmail.com"
 };
 
