@@ -166,7 +166,7 @@ const Contact: React.FC = () => {
               {/* File Upload */}
               <div className="space-y-2">
                 <label className="text-xs font-bold uppercase tracking-widest text-gray-500 dark:text-gray-400 flex items-center gap-2">
-                  <Upload size={14} /> Upload Drawing / Image
+                  <Upload size={14} /> Upload Reference Image
                 </label>
                 <div className="relative border-2 border-dashed border-gray-200 dark:border-gray-800 rounded-xl p-6 hover:border-brand dark:hover:border-brand transition-colors bg-white dark:bg-black text-center group cursor-pointer">
                   <input 

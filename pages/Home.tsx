@@ -24,10 +24,10 @@ const Home: React.FC = () => {
   return (
     <div className="overflow-hidden">
       {/* Hero Section - Mobile Centric Realignment */}
-      <section className="relative min-h-[70vh] sm:min-h-[85vh] flex items-center pt-16 bg-white dark:bg-black overflow-hidden technical-grid transition-colors duration-300">
+      <section className="relative min-h-[50vh] sm:min-h-[70vh] flex items-center pt-20 pb-8 sm:pb-12 bg-white dark:bg-black overflow-hidden technical-grid transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            <div className="space-y-4 sm:space-y-6 text-center lg:text-left order-2 lg:order-1">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8 items-center">
+            <div className="space-y-2 sm:space-y-4 text-center lg:text-left order-2 lg:order-1">
               <div className="inline-flex items-center gap-2 bg-brand/5 text-brand px-2 py-1 rounded font-black uppercase tracking-[0.2em] text-[8px] sm:text-[9px]">
                 <Zap size={10} />
                 <span>Industrial Excellence</span>
@@ -78,7 +78,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Highlights - High Density & Horizontal on Mobile */}
-      <section className="py-8 sm:py-16 bg-light dark:bg-gray-900 border-y border-gray-100 dark:border-gray-800 transition-colors duration-300">
+      <section className="py-4 sm:py-8 bg-light dark:bg-gray-900 border-y border-gray-100 dark:border-gray-800 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6">
             {[
@@ -121,7 +121,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* About Section - Stacked and Compact */}
-      <section id="about" className="py-12 sm:py-20 bg-black text-white relative overflow-hidden">
+      <section id="about" className="py-8 sm:py-12 bg-black text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 animate-slow-spin">
            <Settings size={600} className="text-brand absolute -right-40 -top-40" />
         </div>
@@ -153,14 +153,14 @@ const Home: React.FC = () => {
 
       {/* Contact Section - Streamlined for Mobile */}
       {/* Technical Support / Contact */}
-      <section id="contact" className="py-12 sm:py-20 bg-white dark:bg-black transition-colors duration-300">
+      <section id="contact" className="py-6 sm:py-12 bg-white dark:bg-black transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-light dark:bg-gray-900 rounded-[2rem] p-8 sm:p-16 border border-gray-100 dark:border-gray-800 flex flex-col lg:flex-row gap-12 items-center transition-colors duration-300">
-            <div className="lg:w-1/2 space-y-6">
+          <div className="bg-light dark:bg-gray-900 rounded-[2rem] p-5 sm:p-10 border border-gray-100 dark:border-gray-800 flex flex-col lg:flex-row gap-6 lg:gap-8 items-center transition-colors duration-300">
+            <div className="lg:w-1/2 space-y-4">
               <h2 className="text-3xl sm:text-5xl font-serif font-black text-black dark:text-white transition-colors duration-300">Let's Discuss <br/><span className="text-brand dark:text-red-500">Your Project</span></h2>
               <p className="text-sm text-gray-500 font-medium leading-relaxed max-w-sm">Direct consultation for technical specifications, material selection, and custom blueprints.</p>
               
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
                  <a href={`tel:${CONTACT_DATA.phone}`} className="flex items-center gap-4 p-4 bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 hover:border-brand dark:hover:border-red-500 transition-all shadow-sm">
                     <div className="w-10 h-10 bg-brand/5 text-brand flex items-center justify-center rounded-lg"><Phone size={18} /></div>
                     <div>
@@ -178,13 +178,13 @@ const Home: React.FC = () => {
               </div>
             </div>
 
-            <div className="lg:w-1/2 w-full space-y-6">
-               <div className="bg-white dark:bg-gray-900 p-6 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm space-y-4 transition-colors duration-300">
+            <div className="lg:w-1/2 w-full space-y-4">
+               <div className="bg-white dark:bg-gray-900 p-5 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm space-y-3 transition-colors duration-300">
                  <div className="flex items-start gap-4">
                    <MapPin className="text-brand shrink-0" size={20} />
                    <div>
                      <h4 className="text-[10px] font-black uppercase tracking-widest text-black dark:text-white mb-1 transition-colors duration-300">Factory Unit</h4>
-                     <p className="text-xs font-bold text-gray-400 leading-snug">{CONTACT_DATA.address}</p>
+                     <a href={`https://www.google.com/maps/place/Gokul+Estate/@22.1543454,70.7778682,19z/data=!3m1!4b1!4m6!3m5!1s0x395835bd3754a6cd:0xa633680a35fcdf11!8m2!3d22.1543442!4d70.7785119!16s%2Fg%2F11q9024xrx?authuser=0&entry=ttu&g_ep=EgoyMDI2MDMyNC4wIKXMDSoASAFQAw%3D%3D`} className="text-sm font-medium text-black dark:text-white leading-relaxed">{CONTACT_DATA.address}</a>
                    </div>
                  </div>
                  <div className="h-[1px] bg-gray-100 dark:bg-gray-800 transition-colors duration-300"></div>
