@@ -18,7 +18,11 @@ const Products: React.FC = () => {
     });
   }, [activeCategory, searchQuery]);
 
-  const categories = ['All', ...Object.values(Category)];
+  const categories = ['All', ...Object.values(Category).filter(cat => 
+    cat !== Category.CeramicGuides && 
+    cat !== Category.HighAlumina && 
+    cat !== Category.IndustrialComponents
+  )];
 
   return (
     <div className="bg-white dark:bg-black min-h-screen pt-20 pb-16 sm:pb-20 transition-colors duration-300">
@@ -85,8 +89,8 @@ const Products: React.FC = () => {
           Don’t see your specific component? We build to blueprint.
         </p>
         <Link
-          to="/#contact"
-          className="text-[9px] font-black uppercase tracking-widest text-brand hover:underline flex items-center gap-1"
+          to="/contact"
+          className="text-[9px] font-black uppercase tracking-widest text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300 transition-colors flex items-center gap-1 hover:underline"
         >
           Send Blueprint <ChevronRight size={10} />
         </Link>

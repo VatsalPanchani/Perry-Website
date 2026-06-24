@@ -2,7 +2,11 @@
 export enum Category {
   CeramicGuides = "Ceramic Guides",
   HighAlumina = "High Alumina Products",
-  IndustrialComponents = "Industrial Components"
+  IndustrialComponents = "Industrial Components",
+  CeramicPipes = "Ceramic Pipes",
+  CeramicHook = "Ceramic Hook",
+  CeramicRing = "Ceramic Ring",
+  SpecialComponents = "Special Components"
 }
 
 export interface Product {
