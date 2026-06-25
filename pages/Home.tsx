@@ -17,9 +17,9 @@ import {
 } from 'lucide-react';
 import { CONTACT_DATA, PRODUCTS, OWNER_NAME } from '../constants';
 import ProductCard from '../components/ProductCard';
-import BannerImage from '../public/product_images/Banner Image.png';
-import IndustrialImg1 from '../public/product_images/industrial img1.png';
-import IndustrialImage2 from '../public/product_images/industrial image2.png';
+import BannerImage from '../product_images/Banner Image.png';
+import IndustrialImg1 from '../product_images/industrial img1.png';
+import IndustrialImage2 from '../product_images/industrial image2.png';
 
 const Home: React.FC = () => {
   const bestSellers = PRODUCTS.filter(p => p.isBestSeller).slice(0, 4);
