@@ -11,7 +11,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     <div className="group bg-white dark:bg-gray-900 rounded overflow-hidden border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md hover:border-brand dark:hover:border-red-500 dark:shadow-none dark:hover:border-gray-600 transition-all duration-300 flex flex-col h-full">
       <div className="relative aspect-square overflow-hidden bg-gray-50 dark:bg-gray-800">
         <img
-          src={`/product_images/light/${product.id}.png`}
+          src={`/product_images/light/${product.id}.jpg`}
           alt={product.name}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 dark:hidden"
         />
